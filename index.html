@@ -8,14 +8,32 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="jumbotron col-sm-6 mx-auto">
-        <h1 class="Header1">Wanna Take a Quiz?</h1>
-        
-        <hr class="my-4">
-        
-        <a class="btn btn-primary btn-lg" href="#" role="button">Click here to start</a>
-      </div>
+    <div class="jumbotron col-sm-6 mx-auto" id="greeting">
+        <h1 class="Header1">POP QUIZ TIME!</h1>
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="B1">Click Here To Start</button>
+    </div>
 
-    <script> src="script.js"</script>
+    <div class="jumbotron col-sm-6 mx-auto" id="Q1">
+        <h1 class="Header1">What is JavaScript?</h1>
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="winner1">A programming language</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="loser1">A letter about coffee</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="loser2">A who-sy-whats-it</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="loser3">A thing-a-majig</button>
+    </div>
+      
+      <div class="jumbotron col-sm-6 mx-auto" id="Q2">
+        <h1 class="Header1">Which of these are data types</h1>
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="loser4">Strings</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="loser5">Boolean</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="loser6">Integer</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="winner2">All of the above</button>
+    </div>
+
+    <div class="jumbotron col-sm-6 mx-auto" id="gameover">
+        <h1 class="Header1">GAME OVER</h1>
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="restart">Click Here To Restart</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+    <script src="./script.js"></script> 
 </body>
 </html>
