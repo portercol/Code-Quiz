@@ -1,0 +1,16 @@
+/* body {
+    background-color: linear-gradient(red, yellow);
+} */
+
+.jumbotron {
+    margin-top: 4rem;
+}
+
+.Header1 {
+    text-align: center;
+}
+
+.btn {
+    background-color: lightgreen;
+    border-radius: .9em;
+}
