@@ -8,9 +8,21 @@
 
 .Header1 {
     text-align: center;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 .btn {
-    background-color: lightgreen;
+    background-color: rgb(165, 37, 14);
     border-radius: .9em;
+}
+
+#time {
+    font-weight: bold;
+    font-size: medium;
+}
+
+#scoreboard {
+    font-weight: bold;
+    font-size: medium;
 }
