@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     var scoreUp = 0;
 
-    $('div#Q1,#Q2,#gameover').hide();
+    $('div#Q1,#Q2,#Q3,#Q4,#Q5,#gameover').hide();
 
     $("#B1").on("click", function () {
         $("#greeting").hide(); $("#Q1").show();
@@ -23,13 +23,49 @@ $(document).ready(function () {
     });
 
     $("#winner2").on("click", function () {
-        $("#Q2").hide(); $("#gameover").show();
+        $("#Q2").hide(); $("#Q3").show();
         scoreUp = scoreUp + 1;
         $("#scoreboard").html(scoreUp);
     });
 
     $("#loser4,#loser5,#loser6").on("click", function () {
-        $("#Q2").hide(); $("#gameover").show();
+        $("#Q2").hide(); $("#Q3").show();
+        secondsLeft = secondsLeft - 10
+        $("#time").html(secondsLeft);
+    });
+
+    $("#winner3").on("click", function () {
+        $("#Q3").hide(); $("#Q4").show();
+        scoreUp = scoreUp + 1;
+        $("#scoreboard").html(scoreUp);
+    });
+
+    $("#loser7,#loser8,#loser9").on("click", function () {
+        $("#Q3").hide(); $("#Q4").show();
+        secondsLeft = secondsLeft - 10
+        $("#time").html(secondsLeft);
+    });
+
+    $("#winner4").on("click", function () {
+        $("#Q4").hide(); $("#Q5").show();
+        scoreUp = scoreUp + 1;
+        $("#scoreboard").html(scoreUp);
+    });
+
+    $("#loser10,#loser11,#loser12").on("click", function () {
+        $("#Q4").hide(); $("#Q5").show();
+        secondsLeft = secondsLeft - 10
+        $("#time").html(secondsLeft);
+    });
+
+    $("#winner5").on("click", function () {
+        $("#Q5").hide(); $("#gameover").show();
+        scoreUp = scoreUp + 1;
+        $("#scoreboard").html(scoreUp);
+    });
+
+    $("#loser13,#loser14,#loser15").on("click", function () {
+        $("#Q5").hide(); $("#gameover").show();
         secondsLeft = secondsLeft - 10
         $("#time").html(secondsLeft);
     });
@@ -38,15 +74,14 @@ $(document).ready(function () {
         $("#gameover").hide(); $("#greeting").show();
     });
 
-
     var timeEl = document.querySelector("#time");
-    var secondsLeft = 1000;
+    var secondsLeft = 45;
     var click = document.querySelector("#B1");
 
     click.addEventListener("click", function () {
-        console.log(click)
+        // console.log(click)
         var timerInterval = setInterval(function () {
-            console.log(timerInterval)
+            // console.log(timerInterval)
             secondsLeft--;
             timeEl.innerText = "Timer: " + secondsLeft;
             // secondsLeft + "Timer:"
@@ -58,7 +93,7 @@ $(document).ready(function () {
             // this is the speed of the clock not the intervals
         }, 1000);
     })
-    console.log(click)
+    // console.log(click)
     // setTime();
     // var click = document.querySelector("#answer1");
     // click.addEventListener("click",function answer(){
