@@ -1,112 +1,144 @@
 $(document).ready(function () {
 
-    var scoreUp = 0;
+    var pointsUp = 0;
 
+    // I want to hide the last 6 slides so the Greeting is by itself
     $('div#Q1,#Q2,#Q3,#Q4,#Q5,#gameover').hide();
 
+    // When I click the start button I want to see the first question and hide the greeting
     $("#B1").on("click", function () {
-        $("#greeting").hide(); $("#Q1").show();
+        $("#greeting").hide();
+        $("#Q1").show();
+        startGame();
     });
 
+    // If the user chooses right, 1 point is added, the questions go away and the next slide is shown
     $("#winner1").on("click", function () {
-        $("#Q1").hide(); $("#Q2").show();
-        scoreUp = scoreUp + 1;
-        $("#scoreboard").html(scoreUp);
+        $("#Q1").hide();
+        $("#Q2").show();
+        pointsUp = pointsUp + 1;
+        $("#scoreboard").html(pointsUp);
     });
 
+    // If the user chooses wrong, time is deducted and the next slide is shown
     $("#loser1,#loser2,#loser3").on("click", function () {
-        $("#Q1").hide(); $("#Q2").show();
+        $("#Q1").hide();
+        $("#Q2").show();
         secondsLeft = secondsLeft - 10
         $("#time").html(secondsLeft);
-        scoreUp = scoreUp - 1;
-        $("#scoreboard").html(scoreUp);
+        // scoreUp = scoreUp - 1;
+        $("#scoreboard").html(pointsUp);
     });
 
+    // If the user chooses right, 1 point is added, the questions go away and the next slide is shown
     $("#winner2").on("click", function () {
-        $("#Q2").hide(); $("#Q3").show();
-        scoreUp = scoreUp + 1;
-        $("#scoreboard").html(scoreUp);
+        $("#Q2").hide();
+        $("#Q3").show();
+        pointsUp = pointsUp + 1;
+        $("#scoreboard").html(pointsUp);
     });
 
+    // If the user chooses wrong, time is deducted and the next slide is shown
     $("#loser4,#loser5,#loser6").on("click", function () {
-        $("#Q2").hide(); $("#Q3").show();
+        $("#Q2").hide();
+        $("#Q3").show();
         secondsLeft = secondsLeft - 10
         $("#time").html(secondsLeft);
     });
 
+    // If the user chooses right, 1 point is added, the questions go away and the next slide is shown
     $("#winner3").on("click", function () {
-        $("#Q3").hide(); $("#Q4").show();
-        scoreUp = scoreUp + 1;
-        $("#scoreboard").html(scoreUp);
+        $("#Q3").hide();
+        $("#Q4").show();
+        pointsUp = pointsUp + 1;
+        $("#scoreboard").html(pointsUp);
     });
 
+    // If the user chooses wrong, time is deducted and the next slide is shown
     $("#loser7,#loser8,#loser9").on("click", function () {
-        $("#Q3").hide(); $("#Q4").show();
+        $("#Q3").hide();
+        $("#Q4").show();
         secondsLeft = secondsLeft - 10
         $("#time").html(secondsLeft);
     });
 
+    // If the user chooses right, 1 point is added, the questions go away and the next slide is shown
     $("#winner4").on("click", function () {
-        $("#Q4").hide(); $("#Q5").show();
-        scoreUp = scoreUp + 1;
-        $("#scoreboard").html(scoreUp);
+        $("#Q4").hide();
+        $("#Q5").show();
+        pointsUp = pointsUp + 1;
+        $("#scoreboard").html(pointsUp);
     });
 
+    // If the user chooses wrong, time is deducted and the next slide is shown
     $("#loser10,#loser11,#loser12").on("click", function () {
-        $("#Q4").hide(); $("#Q5").show();
+        $("#Q4").hide();
+        $("#Q5").show();
         secondsLeft = secondsLeft - 10
         $("#time").html(secondsLeft);
     });
 
+    // If the user chooses right, 1 point is added, the questions go away and the quiz is over
     $("#winner5").on("click", function () {
-        $("#Q5").hide(); $("#gameover").show();
-        scoreUp = scoreUp + 1;
-        $("#scoreboard").html(scoreUp);
+        pointsUp = pointsUp + 1;
+        $("#scoreboard").html(pointsUp);
+        endGame()
     });
 
+    // If the user chooses wrong, time is deducted and the quiz is over
     $("#loser13,#loser14,#loser15").on("click", function () {
-        $("#Q5").hide(); $("#gameover").show();
         secondsLeft = secondsLeft - 10
         $("#time").html(secondsLeft);
+        endGame()
     });
 
+    // If the restart button is clicked the gameover slide hides and the greeting slide is shown
     $("#restart").on("click", function () {
         $("#gameover").hide(); $("#greeting").show();
     });
 
-    var timeEl = document.querySelector("#time");
-    var secondsLeft = 45;
-    var click = document.querySelector("#B1");
+    //This function will end the game for the user and store the points in local storage
+    function endGame() {
+        $("#Q5").hide();
+        $("#gameover").show();
+        //Show highscore
+        localStorage.setItem("high-score", pointsUp)
+        //console.log("endGame")
+    }
 
-    click.addEventListener("click", function () {
-        // console.log(click)
+    // This funtion when clicked on will get scores and store them
+    $("#highscore").on("click", function () {
+        //console.log("highscore")
+        var highScore = localStorage.getItem("high-score")
+        //Once h.s. button is clicked user will see high scores entered
+        //User should be able to input their h.s.
+        //Pull h.s. from local storage
+        $(".high-scores").html(highScore)
+    });
+
+    function startGame() {
+        //reset timer 
+        //reset score
+        //show first question
+    }
+
+
+    var timeEl = document.querySelector("#time");
+    var secondsLeft = 50;
+
+    // This function will run the timer and count down as the user plays the game
+    $("#B1").on("click", function () {
         var timerInterval = setInterval(function () {
-            // console.log(timerInterval)
             secondsLeft--;
             timeEl.innerText = "Timer: " + secondsLeft;
-            // secondsLeft + "Timer:"
 
             if (secondsLeft === 0) {
                 clearInterval(timerInterval);
-                sendMessage("Time's Up!");
+
             }
-            // this is the speed of the clock not the intervals
+
         }, 1000);
-    })
-    // console.log(click)
-    // setTime();
-    // var click = document.querySelector("#answer1");
-    // click.addEventListener("click",function answer(){
-    // var scoreInterval = setTime
-    // });
-    // console.log('answer1')
-
-
-
-
-
-
-
+    });
 
 
 });
