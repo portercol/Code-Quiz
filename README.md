@@ -10,3 +10,9 @@ This is an application I built called Code Quiz that allows the user to take a q
 ![Code Quiz](assests/codequizpic.jpg)
 
 Link to live site: [Code Quiz](https://portercol.github.io/Code-Quiz/)
+
+# Credits
+
+1. Bootstrap CDN
+2. jQuery CDN
+3. Peers from study groups + TA's/Tutors
