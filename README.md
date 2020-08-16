@@ -1,32 +1,12 @@
-User Story
+# Code Quiz
 
-AS A coding bootcamp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
+This is an application I built called Code Quiz that allows the user to take a quiz on topical code questions.
 
-Acceptance Criteria
+1. User selects their answers by clicking buttons.
+2. If the right answer is selected the user gets 1 point.
+3. If the wrong answer is selected the timer deducts 10 seconds.
+4. The user can see their high score by clicking the high score button.
 
-GIVEN I am taking a code quiz
-<br>
-WHEN I click the start button
-<br>
-THEN a timer starts and I am presented with a question
-<br>
-WHEN I answer a question
-<br>
-THEN I am presented with another question
-<br>
-WHEN I answer a question incorrectly
-<br>
-THEN time is subtracted from the clock
-<br>
-WHEN all questions are answered or the timer reaches 0
-<br>
-THEN the game is over
-<br>
-WHEN the game is over
-<br>
-THEN I can save my initials and score
-
+![Code Quiz](codequizpic.png)
 
 Link to live site: [Code Quiz](https://portercol.github.io/Code-Quiz/)
