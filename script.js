@@ -9,7 +9,6 @@ $(document).ready(function () {
     $("#B1").on("click", function () {
         $("#greeting").hide();
         $("#Q1").show();
-        startGame();
     });
 
     // If the user chooses right, 1 point is added, the questions go away and the next slide is shown
@@ -26,8 +25,6 @@ $(document).ready(function () {
         $("#Q2").show();
         secondsLeft = secondsLeft - 10
         $("#time").html(secondsLeft);
-        // scoreUp = scoreUp - 1;
-        $("#scoreboard").html(pointsUp);
     });
 
     // If the user chooses right, 1 point is added, the questions go away and the next slide is shown
@@ -103,25 +100,13 @@ $(document).ready(function () {
         $("#gameover").show();
         //Show highscore
         localStorage.setItem("high-score", pointsUp)
-        //console.log("endGame")
     }
 
     // This funtion when clicked on will get scores and store them
     $("#highscore").on("click", function () {
-        //console.log("highscore")
         var highScore = localStorage.getItem("high-score")
-        //Once h.s. button is clicked user will see high scores entered
-        //User should be able to input their h.s.
-        //Pull h.s. from local storage
         $(".high-scores").html(highScore)
     });
-
-    function startGame() {
-        //reset timer 
-        //reset score
-        //show first question
-    }
-
 
     var timeEl = document.querySelector("#time");
     var secondsLeft = 50;
