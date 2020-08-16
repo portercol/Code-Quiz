@@ -3,7 +3,6 @@
 } */
 body {
     background-image: linear-gradient(-90deg, rgb(74, 252, 163), rgb(157, 74, 252));
-    /* background-image: url(mario.bg.theme2.png) */
 }
 
 .jumbotron {
@@ -29,4 +28,11 @@ body {
 #scoreboard {
     font-weight: bold;
     font-size: medium;
+}
+
+.high-scores {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 2rem;
 }
