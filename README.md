@@ -27,3 +27,6 @@ THEN the game is over
 WHEN the game is over
 <br>
 THEN I can save my initials and score
+
+
+Link to live site: [Code Quiz](https://portercol.github.io/Code-Quiz/)
